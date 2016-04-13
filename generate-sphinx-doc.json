@@ -7,11 +7,7 @@
     [
       {
         "source": "payload",
-        "name": "repository.clone_url"
-      },
-      {
-        "source": "payload",
-        "name": "ref"
+        "name": "repository.ssh_url"
       }
     ],
     "trigger-rule":
