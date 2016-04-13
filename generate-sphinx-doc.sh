@@ -8,4 +8,4 @@ fi
 git fetch
 git checkout -f $2
 
-infra-doc && make clean-html && make html
+cd infra-doc && make clean-html && make html
