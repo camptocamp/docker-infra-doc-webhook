@@ -1,3 +1,3 @@
 #!/bin/sh
 
-chown -R git. /sphinxdoc
+chown -R git. $BUILDHTMLDIR
