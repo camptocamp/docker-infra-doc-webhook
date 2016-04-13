@@ -4,7 +4,7 @@ MAINTAINER mickael.canevet@camptocamp.com
 
 EXPOSE 9000
 
-VOLUME ["/sphinxdoc", "/var/lib/git"]
+VOLUME ["/sphinxdoc", "/var/lib/git/sphinxdoc"]
 
 RUN apt-get update \
   && apt-get install -y make python2.7 virtualenv git \
