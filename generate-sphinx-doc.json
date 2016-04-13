@@ -1,0 +1,36 @@
+[
+  {
+    "id": "generate-sphinx-doc",
+    "execute-command": "/generate-sphinx-doc.sh",
+    "command-working-directory": "/",
+    "pass-arguments-to-command":
+    [
+      {
+        "source": "payload",
+        "name": "repository.clone_url"
+      },
+      {
+        "source": "payload",
+        "name": "ref"
+      }
+    ],
+    "trigger-rule":
+    {
+      "and":
+      [
+        {
+          "match":
+          {
+            "type": "payload-hash-sha1",
+            "secret": "%{HOOKS_SECRET}",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Hub-Signature"
+            }
+          }
+        }
+      ]
+    }
+  }
+]
