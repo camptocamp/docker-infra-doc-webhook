@@ -12,7 +12,7 @@
     ],
     "trigger-rule":
     {
-      "and":
+      "or":
       [
         {
           "match":
@@ -23,6 +23,18 @@
             {
               "source": "header",
               "name": "X-Hub-Signature"
+            }
+          }
+        },
+        {
+          "match":
+          {
+            "type": "value",
+            "value": "%{HOOKS_SECRET}",
+            "parameter":
+            {
+              "source": "payload",
+              "name": "secret"
             }
           }
         }
