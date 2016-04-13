@@ -17,6 +17,7 @@ RUN ln -sf /usr/bin/python2.7 /usr/bin/python2
 
 COPY generate-sphinx-doc.json /etc/webhook/generate-sphinx-doc.json
 COPY generate-sphinx-doc.sh /generate-sphinx-doc.sh
+COPY config /root/.ssh/config
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY /docker-entrypoint.d/* /docker-entrypoint.d/
