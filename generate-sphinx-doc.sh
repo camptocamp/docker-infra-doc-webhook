@@ -7,5 +7,6 @@ if ! git config remote.origin.url &> /dev/null; then
 fi
 git fetch
 git checkout -f master
+git pull
 
 cd infra-doc && make clean-html && make html
