@@ -18,7 +18,7 @@
           "match":
           {
             "type": "payload-hash-sha1",
-            "secret": "%{HOOKS_SECRET}",
+            "secret": "%{HOOK_SECRET}",
             "parameter":
             {
               "source": "header",
@@ -30,7 +30,7 @@
           "match":
           {
             "type": "payload-hash-sha256",
-            "secret": "%{HOOKS_SECRET}",
+            "secret": "%{HOOK_SECRET}",
             "parameter":
             {
               "source": "header",
@@ -42,7 +42,7 @@
           "match":
           {
             "type": "value",
-            "value": "%{HOOKS_SECRET}",
+            "value": "%{HOOK_SECRET}",
             "parameter":
             {
               "source": "payload",
