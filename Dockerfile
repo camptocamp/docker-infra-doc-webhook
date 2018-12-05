@@ -3,9 +3,9 @@ FROM debian:jessie
 EXPOSE 9000
 
 ENV RELEASE=jessie \
-    LANGUAGE=en_US.UTF-8 \
-    LC_ALL=en_US.UTF-8 \
-    LANG=en_US.UTF-8 \
+    LANGUAGE=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    LANG=C.UTF-8 \
     WEBHOOK_VERSION=2.6.3 \
     BUILDHTMLDIR="/sphinx-doc"
 
