@@ -1,22 +1,19 @@
-FROM debian:jessie
+FROM debian:stretch
 
 EXPOSE 9000
 
-ENV RELEASE=jessie \
+ENV RELEASE=stretch \
     LANGUAGE=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     LANG=C.UTF-8 \
-    WEBHOOK_VERSION=2.6.3 \
+    WEBHOOK_VERSION=2.6.9 \
     BUILDHTMLDIR="/sphinx-doc"
 
 RUN apt-get update \
-  && apt-get install -y make python2.7 virtualenv git \
+  && apt-get install -y make python virtualenv git \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /var/lib/git/sphinx-doc && git -C /var/lib/git/sphinx-doc init
-
-# virtualenv insists on using python2
-RUN ln -sf /usr/bin/python2.7 /usr/bin/python2
 
 COPY generate-sphinx-doc.json /etc/webhook/generate-sphinx-doc.json
 COPY generate-sphinx-doc.sh /generate-sphinx-doc.sh
